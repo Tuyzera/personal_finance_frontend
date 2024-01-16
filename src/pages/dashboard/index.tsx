@@ -165,6 +165,10 @@ export default function Dashboard({ accountDetails, transactionsDetails }: { acc
                             </div>
                         <h3>Ano</h3>
                             <select>
+                                <option>2019</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2023</option>
                                 <option>2023</option>
                                 <option>2024</option>
                             </select>
