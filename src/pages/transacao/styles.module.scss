@@ -1,0 +1,27 @@
+.forms{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-top: 10px;
+
+    input{
+        width: 250px;
+    }
+
+    button{
+        padding: 10px;
+        border-radius: 8px;
+        background: none;
+        background-color: #101026;
+        color: #8A8A7D;
+        font-size: 14px;
+        width: 250px;
+        margin-top: 14px;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+}

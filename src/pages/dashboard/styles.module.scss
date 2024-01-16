@@ -1,0 +1,208 @@
+.container{
+    padding: 20px;
+    background-color: #0A0E27;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar{
+    margin: 0;
+    padding: 0;
+    background-color: #171C3A;
+    position: fixed;
+    height: 95%;
+    overflow: auto;
+    width: 20%;
+    padding-top: 30px;
+    color: #585F73;
+    border-radius: 20px;
+ 
+   
+}
+
+.logoImg{
+    width: 90px;
+    height: 90px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(2px 3px 6px #121212);
+    -webkit-filter: drop-shadow(2px 3px 6px #121212)
+}
+
+.sibedar_data{
+    margin-left: 4%;
+    font-size: 16px;
+
+    select{
+        width: 95%;
+        padding: 6px;
+        margin-top: 5px;
+        background: transparent;
+        color: #585F73;
+        border-color: #606380;
+
+
+    }
+
+    select option{
+      background: transparent;
+    }
+
+}
+
+.sibedar_data_accounts_container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16%;
+}
+.sibedar_data_accounts_titles{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.sibedar_data_accounts_title{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.sibedar_data_accounts_data{
+    gap: 100px;
+}
+.sibedar_data_unique_account{
+    display: flex;
+    
+}
+
+.sibedar_data_bottom{
+   h3{
+    margin: 15px 0px 5px 0px;
+   }
+
+   input{
+    background: transparent;
+    border: none;
+    border: 1px solid #606380;
+    padding: 5px;
+    gap: 20px;
+    color: #585F73;
+   }
+
+  
+
+   div{
+    display: flex;
+    gap: 8px;
+    width: 95%;
+   }
+  
+}
+
+
+.btFiltro{
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    border: 2px solid #606380;
+    padding: 6%;
+    width: 95%;
+    color: #585F73;
+    gap: 5%;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.sidebar_options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+    button{
+        background: transparent;
+        border: 0;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: #585F73;
+
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.content{
+    margin-left: 21%;
+    width: 100%;
+}
+
+.components_titles{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.component_saldoAtual{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 350px;
+    height: 140px;
+    background: linear-gradient(to right, #EF6713, #EA5F1E, #E1532F, #D33C51);
+    color: var(--white);
+    padding: 15px;
+
+   div h1{
+        display: flex;
+        justify-content: center;
+    }
+
+    h2{
+        color: #585F73;
+    }
+}
+
+.component_saldoAtual_title, .component_entrada_title, .component_despesa_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+    
+.component_entrada, .component_despesa{
+    background-color: #171C3A;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 350px;
+    height: 140px;
+    color: var(--white);
+    padding: 15px;
+
+
+    div h1{
+        display: flex;
+        justify-content: center;
+    }
+
+    h2{
+        color: #585F73;
+    }
+}
+

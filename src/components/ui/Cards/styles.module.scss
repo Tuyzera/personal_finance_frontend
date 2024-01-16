@@ -1,0 +1,27 @@
+
+.component_entrada_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+    
+.component_entrada{
+    
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 350px;
+    height: 140px;
+    color: var(--white);
+    padding: 15px;
+
+
+    div h1{
+        display: flex;
+        justify-content: center;
+    }
+
+    h2{
+        color: #585F73;
+    }
+}
