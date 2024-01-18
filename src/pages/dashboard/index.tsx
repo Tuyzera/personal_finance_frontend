@@ -12,6 +12,8 @@ import Link from "next/link"
 import { Cards } from "@/components/ui/Cards"
 import {FiLogOut} from 'react-icons/fi'
 
+import { Column } from "@/components/ui/Column"
+
 
 
 
@@ -48,9 +50,18 @@ interface transactionsProps {
     transactionsDetails: transactionsItemProps[];
 }
 
+interface categoryProps {
+    categoryDetails: categoriesItemProps[];
+}
+
+type categoryItemProps = {
+    id: string,
+    name: string
+}
 
 
-export default function Dashboard({ accountDetails, transactionsDetails }: { accountDetails: accountProps, transactionsDetails: transactionsProps }){
+
+export default function Dashboard({ accountDetails, transactionsDetails, categoryDetails }: { accountDetails: accountProps, transactionsDetails: transactionsProps, categoryDetails: categoryProps}){
     const {user, signOut} = useContext(AuthContext);
 
     const [saldoAtual, setSaldoAtual] = useState(0)
@@ -60,9 +71,12 @@ export default function Dashboard({ accountDetails, transactionsDetails }: { acc
     const [refresh, setRefresh] = useState(false)
 
     const [transactions, setTransactions] = useState(transactionsDetails || [])
+    const [categories, setCategories] = useState(categoryDetails || [])
     
     const [accounts, setAccounts] = useState(accountDetails || []);
     const [accountSelected, setAccountSelected] = useState()
+
+
 
     
 
@@ -211,6 +225,7 @@ export default function Dashboard({ accountDetails, transactionsDetails }: { acc
                     <Cards title="Entradas" data={saldoEntrada} backgroundColor="#171C3A" icon="Entrada"/>
                     <Cards title="Despesas" data={77.55} backgroundColor="#171C3A" icon="Despesa"/>
                 </div>
+                <div id="chart"><Column categories={categories}/></div>
                 
             </div>
                 
@@ -229,13 +244,15 @@ export const getServerSideProps = canSSRAuth(async (ctx) => {
 
     const response = await apiClient.get('/accountDetails?user_id=' + userDetail.data.id)
     const response2 = await apiClient.get('/transactionsUser?user_id=' + userDetail.data.id)
+    const response3 = await apiClient.get('/allCategories');
     
 
     
     return {
           props:{
             accountDetails: response.data,
-            transactionsDetails: response2.data
+            transactionsDetails: response2.data,
+            categoryDetails: response3.data
           }
     }
     
