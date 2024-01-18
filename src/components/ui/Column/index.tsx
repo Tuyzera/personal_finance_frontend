@@ -1,10 +1,12 @@
 import ApexCharts from "apexcharts"
 import dynamic from "next/dynamic"
 import { title } from "process"
+import './styles.module.scss'
 import { useEffect, useState } from "react"
 
 interface ColumnType {
-    categories: categoryItemProps
+    categories: categoryItemPropsm,
+    type: string
 }
 
 type categoryItemProps = {
@@ -23,7 +25,7 @@ const Chart = dynamic(() =>
 
 
 
-export function Column({categories} : ColumnType){
+export function Column({categories, type} : ColumnType){
 
 const [categoryList, setCategoryList] = useState(categories || [])
 
@@ -53,7 +55,7 @@ const OptionsColumnChart = {
     xaxis: {
         categories: categoryName,
     },
-    colors:columnColors
+    colors:columnColors,
 
     }
 
@@ -62,9 +64,9 @@ const OptionsColumnChart = {
         data: ["55,00", "232,00"]
 }]
     return(
-        <div>
-            {categoryName}
-            <Chart options={OptionsColumnChart} series={SeriesColumnChart} height={200} width={500} type="bar" />
+        <div className="#chart">
+            <h2>Top 5 Entradas por Categoria</h2>
+            <Chart options={OptionsColumnChart} series={SeriesColumnChart} height={200} width={500} type={type} />
         </div>
         
     )

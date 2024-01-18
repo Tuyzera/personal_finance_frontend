@@ -225,7 +225,9 @@ export default function Dashboard({ accountDetails, transactionsDetails, categor
                     <Cards title="Entradas" data={saldoEntrada} backgroundColor="#171C3A" icon="Entrada"/>
                     <Cards title="Despesas" data={77.55} backgroundColor="#171C3A" icon="Despesa"/>
                 </div>
-                <div id="chart"><Column categories={categories}/></div>
+                    <div className={styles.component_entrada}>
+                    <Column categories={categories} type="bar"/>
+                    </div>
                 
             </div>
                 
