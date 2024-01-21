@@ -5,7 +5,7 @@ import './styles.module.scss'
 import { useEffect, useState } from "react"
 
 interface ColumnType {
-    categories: categoryItemPropsm,
+    categories: categoryItemProps,
     type: string
 }
 
@@ -35,8 +35,8 @@ const [categoryName, setCategoryName] = useState([])
 
 useEffect(()=>{
     function getCategoryNames(){
-        const categories = []
-        categoryList.map((item)=> {
+        const categories = [];
+        (categoryList as categoryItemProps[]).map((item)=> {
             
             if(!categories.includes(item.name)){
                 categories.push(item.name)
@@ -66,7 +66,7 @@ const OptionsColumnChart = {
     return(
         <div className="#chart">
             <h2>Top 5 Entradas por Categoria</h2>
-            <Chart options={OptionsColumnChart} series={SeriesColumnChart} height={200} width={500} type={type} />
+            <Chart options={OptionsColumnChart} series={SeriesColumnChart as any} height={200} width={500} type={type as any} />
         </div>
         
     )

@@ -70,10 +70,10 @@ export default function Dashboard({ accountDetails, transactionsDetails, categor
 
     const [refresh, setRefresh] = useState(false)
 
-    const [transactions, setTransactions] = useState(transactionsDetails || [])
-    const [categories, setCategories] = useState(categoryDetails || [])
+    const [transactions, setTransactions] = useState(transactionsDetails as transactionsProps|| [])
+    const [categories, setCategories] = useState(categoryDetails as categoryProps || [])
     
-    const [accounts, setAccounts] = useState(accountDetails || []);
+    const [accounts, setAccounts] = useState(accountDetails as accountProps|| []);
     const [accountSelected, setAccountSelected] = useState()
 
 
@@ -83,7 +83,7 @@ export default function Dashboard({ accountDetails, transactionsDetails, categor
     useEffect(() => {
        function sumBalance(){
         var balanceSum = 0;
-            for(var i = 0; i < accounts.length; i++){
+            for(var i = 0; i < (accounts as accountProps[]).length; i++){
                 balanceSum = balanceSum + accounts[i].balance;
                 
             }  
@@ -93,7 +93,7 @@ export default function Dashboard({ accountDetails, transactionsDetails, categor
 
        function sumTransactionsEntrada(){
         var entradaSum = 0;
-        for(var i = 0; i < transactions.length; i++){
+        for(var i = 0; i < (transactions as transactionsProps[]).length; i++){
             if(transactions[i].type == "Entrada"){
                 entradaSum += transactions[i].value;
             }
@@ -142,7 +142,7 @@ export default function Dashboard({ accountDetails, transactionsDetails, categor
                         <h3>Conta</h3>
                         <select value={accountSelected} onChange={handleChangeAccount}>
                             <option value={"allBalance"}>Escolha o banco</option>
-                            {accounts.map((item, index) => {
+                            {(accounts as accountItemProps[]).map((item, index)=> {
                                 return(
                                     <option key={item.id} value={index}>
                                         {item.name}
@@ -159,7 +159,7 @@ export default function Dashboard({ accountDetails, transactionsDetails, categor
                                     <p style={{flex: 1}}>Saldo</p>
                                 </div>
                                 <div className={styles.sibedar_data_accounts_data}>
-                                {accounts.map((item, index) => {
+                                {(accounts as accountItemProps[]).map((item, index) => {
                                     return(
                                         <div className={styles.sibedar_data_unique_account}>
                                             <p style={{flex: 1}}>{item.name}</p>
@@ -226,7 +226,7 @@ export default function Dashboard({ accountDetails, transactionsDetails, categor
                     <Cards title="Despesas" data={77.55} backgroundColor="#171C3A" icon="Despesa"/>
                 </div>
                     <div className={styles.component_entrada}>
-                    <Column categories={categories} type="bar"/>
+                    <Column categories={categories as any} type="bar"/>
                     </div>
                 
             </div>

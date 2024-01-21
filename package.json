@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "apexcharts": "^3.45.1",
+    "apexcharts": "^3.45.2",
     "axios": "^1.6.1",
     "azure-devops-extension-sdk": "^4.0.2",
     "jsonwebtoken": "^9.0.2",
